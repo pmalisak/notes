@@ -15,3 +15,15 @@
       $event->setResponse($response);
       $event->setResult($response);
     }
+
+## Get param from route
+
+    public function onSomeMethod($event)
+    {
+        if (! $matches = $event->getRouteMatch()) {
+            return null; // not found in route => 404
+        }
+
+        $params = $matches->getParams();
+        $controllerName = isset($params['controller']) ? $params['controller'] : null;
+    }
