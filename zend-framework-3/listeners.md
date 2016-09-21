@@ -4,8 +4,8 @@
 
     public function onSomeMethod($event)
     {
-      /** @var HttpResponse $response */
-      $response = $event->getResponse() ?: new HttpResponse();
+      /** @var \Zend\Http\Response $response */
+      $response = $event->getResponse() ?: new \Zend\Http\Response();
       $router = $event->getRouter();
     
       $uri = $router->assemble(['yourDynamicParam' => 'sth'], ['name' => 'your-route-name']);
