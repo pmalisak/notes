@@ -124,3 +124,20 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 1. FROM - download image from docker repository
 2. COPY - copy configuration
+
+## Docker for MAC
+
+There is issue with slow file sync when there is a lot files.
+
+http://docker-sync.io/
+
+```
+$ gem install docker-sync
+```
+
+Create `docker-compose-dev.yml` and `docker-sync.yml` and next run command:
+
+```
+$ docker-sync-stack
+```
+
